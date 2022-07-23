@@ -1,5 +1,28 @@
 {
   "dependencies": {
-    "inquirer": "^6.5.0"
-  }
+    "inquirer": "^6.5.0",
+    "jest": "^28.1.3"
+  },
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Castoreno05/TeamProfileGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Castoreno05/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/Castoreno05/TeamProfileGenerator#readme",
+  "description": ""
 }
