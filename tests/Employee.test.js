@@ -1,5 +1,6 @@
+// Import Employee
 const Employee = require('../lib/Employee');
-
+// need to test Employee to see if "name" will take in a string
 describe("Employee", () => {
     describe("name", () => {
         it('should set a name per the constructor argument', () => {
@@ -9,7 +10,7 @@ describe("Employee", () => {
         });
     });
 });
-
+// Need to test Employee to see if "id" will take in a number
 describe("Employee", () => {
     describe("id", () => {
         it('should set a id per the constructor argument', () => {
@@ -36,7 +37,7 @@ describe("Employee", () => {
         expect(typeof (employee)).toEqual("object");
     });
 });
-
+// Test getRole()
 describe("Employee", () => {
     describe("getRole()", () => {
         it('should return the class Employee', () => {
@@ -46,7 +47,7 @@ describe("Employee", () => {
         });
     });
 });
-
+// Test getEmail()
 describe("Employee", () => {
     describe("getEmail()", () => {
         it('should return the property email', () => {
@@ -56,7 +57,7 @@ describe("Employee", () => {
         });
     });
 });
-
+// test getId()
 describe("Employee", () => {
     describe("getId()", () => {
         it('should return the property email', () => {
@@ -66,7 +67,7 @@ describe("Employee", () => {
         });
     });
 });
-
+// test getName() 
 describe("Employee", () => {
     describe("getName()", () => {
         it('should return the property email', () => {
