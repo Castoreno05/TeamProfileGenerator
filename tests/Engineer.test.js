@@ -4,7 +4,7 @@ const Engineer = require("../lib/Engineer");
 // Test getRole()
 describe("Engineer", () =>{
     describe("getRole()", () =>{
-        it('should return the role of manager', () =>{
+        it('should return the role of engineer', () =>{
             const test = "Engineer";
             const engineer = new Engineer("Matt", 2, "matthew.g@yahoo.com", "Castoren05");
             expect(engineer.getRole()).toEqual(test);
