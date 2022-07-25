@@ -6,7 +6,7 @@ const Manager = require("./lib/Manager");
 const path = require("path");
 
 async function renderEmployee() {
-
+    // Questions about employees info
     let questions = [{
         type: "input",
         name: "employeeName",
