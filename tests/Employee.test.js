@@ -9,9 +9,7 @@ describe("Employee", () => {
             expect(employee.name).toEqual(name);
         });
     });
-});
-// Need to test Employee to see if "id" will take in a number
-describe("Employee", () => {
+    // Need to test Employee to see if "id" will take in a number
     describe("id", () => {
         it('should set a id per the constructor argument', () => {
             const value = 500;
@@ -19,9 +17,7 @@ describe("Employee", () => {
             expect(employee.id).toEqual(value);
         });
     });
-});
-// Need to test Employee to see if "email" will take in an email
-describe("Employee", () => {
+    // Need to test Employee to see if "email" will take in an email
     describe("email", () => {
         it('should set a email per the constructor argument', () => {
             const email = "matt@test.com";
@@ -29,26 +25,20 @@ describe("Employee", () => {
             expect(employee.email).toEqual(email);
         });
     });
-});
-// Need to test Employee to see if it is equal to an object
-describe("Employee", () => {
+    // Need to test Employee to see if it is equal to an object
     it('should set the properties into an object', () => {
         const employee = new Employee("Matthew", "28", "matt@test.com");
         expect(typeof (employee)).toEqual("object");
     });
-});
-// Test getRole()
-describe("Employee", () => {
+    // Test getRole()
     describe("getRole()", () => {
         it('should return the class Employee', () => {
             const test = "Employee";
             const employee = new Employee("Matthew", 28, "matthew.c@test.com");
-            expect(employee.getRole()).toEqual(test); 
+            expect(employee.getRole()).toEqual(test);
         });
     });
-});
-// Test getEmail()
-describe("Employee", () => {
+    // Test getEmail()
     describe("getEmail()", () => {
         it('should return the property email', () => {
             const test = "matthew.test@yahoo.com";
@@ -56,9 +46,7 @@ describe("Employee", () => {
             expect(employee.getEmail()).toEqual(test)
         });
     });
-});
-// test getId()
-describe("Employee", () => {
+    // Test getId()
     describe("getId()", () => {
         it('should return the property email', () => {
             const test = 45;
@@ -66,9 +54,7 @@ describe("Employee", () => {
             expect(employee.getId()).toEqual(test)
         });
     });
-});
-// test getName() 
-describe("Employee", () => {
+    // Test getName() 
     describe("getName()", () => {
         it('should return the property email', () => {
             const test = "Matthew";
@@ -77,5 +63,3 @@ describe("Employee", () => {
         });
     });
 });
-
-

@@ -9,9 +9,7 @@ describe("Manager", () => {
             expect(manager.getRole()).toEqual(test);
         });
     });
-});
-// Test officeNumber to see if it holds numbers
-describe("Manager", () => {
+    // Test officeNumber to see if it holds numbers
     describe("officeNumber", () => {
         it('should set a vaule to office number', () => {
             const value = 80;
@@ -19,9 +17,7 @@ describe("Manager", () => {
             expect(manager.officeNumber).toEqual(value);
         });
     });
-});
-// Test getOfficeNumber()
-describe("Manager", () => {
+    // Test getOfficeNumber()
     describe("getOfficeNumber()", () => {
         it('should return a value for an office number', () => {
             const value = 80;

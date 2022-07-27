@@ -10,9 +10,7 @@ describe("Engineer", () =>{
             expect(engineer.getRole()).toEqual(test);
         });
     });
-});
-// Test getGithub() 
-describe("Engineer", () =>{
+    // Test getGithub() 
     describe("getGithub", () =>{
         it('should return Github name', () =>{
             const github = "Castoreno05";
@@ -20,9 +18,7 @@ describe("Engineer", () =>{
             expect(engineer.getGithub()).toEqual(github);
         });
     });
-});
-// Test github to see if it holds value
-describe("Engineer", () =>{
+    // Test github to see if it holds value
     describe("github", () =>{
         it('should hold a value for github', () =>{
             const username = "Castoreno05";

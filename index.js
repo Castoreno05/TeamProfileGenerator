@@ -6,8 +6,8 @@ const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const render = require("./lib/generateHTML");
 
-const results_dir = path.resolve(__dirname, "results");
-const outputPath = path.join(results_dir, "employee.html");
+const distDir = path.resolve(__dirname, "dist");
+const join = path.join(distDir, "employee.html");
 
 var roster = [];
 
@@ -46,8 +46,9 @@ async function renderEmployee() {
 
         let officeNumber = manager.officeNumber;
         // console.log(officeNumber);
+        // console.log(answers);
         // Need to add officeNumber to Manager
-        roster.push(new Manager(answers.name, answers.id, answers.email, officeNumber));
+        roster.push(new Manager(answers.employeeName, answers.employeeId, answers.employeeEmail, officeNumber));
     }
     else if (answers.selectedEmployee === "Engineer") {
         let engineer = await inquirer.prompt({
@@ -59,7 +60,7 @@ async function renderEmployee() {
         let github = engineer.github;
         // console.log(github);
         // Need to add github to Engineer
-        roster.push(new Engineer(answers.name,answers.id,answers.email, github));
+        roster.push(new Engineer(answers.employeeName, answers.employeeId, answers.employeeEmail, github));
     }
     else if (answers.selectedEmployee === "Intern") {
         let intern = await inquirer.prompt({
@@ -69,9 +70,9 @@ async function renderEmployee() {
         });
 
         let school = intern.school;
-        // console.log(school);
+        console.log(school);
         // Need to add school to Intern
-        roster.push(new Intern(answers.name,answers.id,answers.email, school));
+        roster.push(new Intern(answers.employeeName, answers.employeeId, answers.employeeEmail, school));
     }
     else {
         return false;
@@ -104,9 +105,9 @@ async function startRender() {
     var allHTML = render(roster);
 
     // check if directory exists
-    if (fs.existsSync(results_dir)) {
+    if (fs.existsSync(distDir)) {
         //if it exists, create file 
-        fs.writeFile(outputPath, allHTML, function (err) {
+        fs.writeFile(join, allHTML, function (err) {
             if (err) {
                 throw (err);
             }
@@ -115,14 +116,14 @@ async function startRender() {
 
     } else {
         //create directory
-        fs.mkdir("./results/", { recursive: true }, function (err) {
+        fs.mkdir("./dist/", { recursive: true }, function (err) {
             if (err) {
                 throw (err);
             };
         });
 
         //now write to file 
-        fs.writeFile("./results/employee.html", allHTML, function (err) {
+        fs.writeFile("./dist/employee.html", allHTML, function (err) {
             if (err) {
                 throw (err);
             }
@@ -132,5 +133,4 @@ async function startRender() {
     }
 
 }
-
 startRender();
