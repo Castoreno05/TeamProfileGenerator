@@ -4,7 +4,7 @@ const path = require("path");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const render = require("./lib/generateHTML");
+const renderTeam = require("./lib/generateHTML");
 
 const distDir = path.resolve(__dirname, "dist");
 const join = path.join(distDir, "employee.html");
@@ -99,38 +99,34 @@ async function startRender() {
         }
         else {
             addMore = false;
-        }
-    }
+        };
+    };
 
-    var allHTML = render(roster);
+    var html = renderTeam(roster);
 
-    // check if directory exists
+    // If the folder exist, create the file
     if (fs.existsSync(distDir)) {
-        //if it exists, create file 
-        fs.writeFile(join, allHTML, function (err) {
-            if (err) {
-                throw (err);
-            }
+        fs.writeFile(join, html, function (err) {
+            if(err){
+                throw(err);
+            };
             console.log("File has been created!");
         });
-
+    // Else create the folder and file    
     } else {
-        //create directory
-        fs.mkdir("./dist/", { recursive: true }, function (err) {
-            if (err) {
-                throw (err);
+        fs.mkdir("./dist/", function (err) {
+            if(err){
+                throw(err);
             };
         });
-
-        //now write to file 
-        fs.writeFile("./dist/employee.html", allHTML, function (err) {
-            if (err) {
-                throw (err);
-            }
+        fs.writeFile("./dist/employee.html", html, function (err) {
+            if(err){
+                throw(err);
+            };
             console.log("Folder and File have been created!");
         });
 
-    }
+    };
 
-}
+};
 startRender();
