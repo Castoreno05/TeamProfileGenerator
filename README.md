@@ -16,7 +16,7 @@ When the process is finalized a HTML file will be created with the information o
 
 User Demonstration
 
-
+https://user-images.githubusercontent.com/105801681/181409908-ae14bba6-7f10-4062-a501-760d570a8bf9.mp4
 
 Tests
 
