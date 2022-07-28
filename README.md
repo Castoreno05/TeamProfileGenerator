@@ -10,7 +10,9 @@ After all questions are answered the user will be prompted to continue generatin
 
 or finish the process by selecting "NO". When the process is finalized a HTML file will be created with the 
 
-information of the employees. View the file within "sample" folder for a representation of what the results will look like.
+information of the employees. View the file within "sample" folder for a representation of what the results will look 
+
+like.
 
 ---
 
