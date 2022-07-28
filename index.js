@@ -5,7 +5,6 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const renderTeam = require("./lib/generateHTML");
-
 const distDir = path.resolve(__dirname, "dist");
 const join = path.join(distDir, "employee.html");
 
@@ -36,14 +35,14 @@ async function renderEmployee() {
     }];
 
     var answers = await inquirer.prompt(questions);
-
+    // Use the answers to select the role of the employee
+    // Wait for the answer to determine the role
     if (answers.selectedEmployee === "Manager") {
         let manager = await inquirer.prompt({
             type: 'input',
             name: 'officeNumber',
             message: "Enter managers office number"
         });
-
         let officeNumber = manager.officeNumber;
         // console.log(officeNumber);
         // console.log(answers);
@@ -56,7 +55,6 @@ async function renderEmployee() {
             name: 'github',
             message: 'Enter Github for Engineer'
         });
-
         let github = engineer.github;
         // console.log(github);
         // Need to add github to Engineer
@@ -68,7 +66,6 @@ async function renderEmployee() {
             name: 'school',
             message: 'Enter School Name for Intern'
         });
-
         let school = intern.school;
         console.log(school);
         // Need to add school to Intern
@@ -78,32 +75,32 @@ async function renderEmployee() {
         return false;
     };
 
-}
+};
 
 
 async function startRender() {
-    let addMore = true;
-    while (addMore) {
+    // Need a question to see if the user will want to add more employees
+    let moreQs = true;
+    while(moreQs){
         const employee = await renderEmployee();
-
-        //ask if they want to keep going. 
-        let keepGoing = await inquirer.prompt({
-            message: "Would you like to add another employee?",
-            name: "continue",
+        //  
+        let finalPrompt = await inquirer.prompt({
             type: "list",
+            name: "continue",
+            message: "Continue and add more employees?",
             choices: ["Yes", "No"]
         });
 
-        if (keepGoing.continue == "Yes") {
-            addMore = true;
+        if(finalPrompt.continue == "Yes"){
+            moreQs = true;
         }
         else {
-            addMore = false;
+            moreQs = false;
         };
     };
-
+    // If no more employees are needed move on and create files
     var html = renderTeam(roster);
-
+    
     // If the folder exist, create the file
     if (fs.existsSync(distDir)) {
         fs.writeFile(join, html, function (err) {
