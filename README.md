@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/105801681/181409171-35ad1df3-05fb-4033
 
 ## Tools Used 
 
-* npm
+* NPM
     * Inquirer
     * Path
     * FS
@@ -40,8 +40,10 @@ https://user-images.githubusercontent.com/105801681/181409171-35ad1df3-05fb-4033
 
 ## Contact Information
 
-Matthew Castoreno <matthew.castoreno@yahoo.com>
+Matthew Castoreno 
 
-Github: <https://github.com/Castoreno05>
+Email: <matthew.castoreno@yahoo.com>
+
+Linkedin: <https://www.linkedin.com/in/matthew-castoreno-4973a923b/>
 
 ---
